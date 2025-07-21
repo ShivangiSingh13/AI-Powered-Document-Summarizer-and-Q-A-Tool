@@ -1,0 +1,6 @@
+streamlit
+python-docx
+PyPDF2
+fpdf
+transformers
+torch             # CPU‑only version is fine; GPU auto‑detected
