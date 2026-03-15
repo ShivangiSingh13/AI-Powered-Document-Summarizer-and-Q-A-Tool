@@ -3,6 +3,6 @@ python-docx
 PyPDF2
 pdfplumber
 fpdf
-transformers>=4.30.0
 torch
-sentencepiece       # CPU‑only version is fine; GPU auto‑detected
+transformers==4.36.2
+sentencepiece      # CPU‑only version is fine; GPU auto‑detected
