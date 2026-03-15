@@ -1,6 +1,7 @@
 streamlit
 python-docx
 PyPDF2
+pdfplumber
 fpdf
 transformers
-torch             # CPU‑only version is fine; GPU auto‑detected
+torch            # CPU‑only version is fine; GPU auto‑detected
