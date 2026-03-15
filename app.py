@@ -8,7 +8,11 @@ import textwrap
 import os
 
 # Load transformers pipelines
-summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
+summarizer = pipeline(
+    "summarization",
+    model="facebook/bart-large-cnn",
+    device=-1
+)
 qa_pipeline = pipeline("question-answering", model="distilbert-base-uncased-distilled-squad")
 
 # Session states
