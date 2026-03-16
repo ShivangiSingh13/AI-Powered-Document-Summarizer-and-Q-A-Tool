@@ -1,8 +1,8 @@
 streamlit
+transformers==4.36.2
+torch==2.1.0
+sentencepiece
 python-docx
 PyPDF2
 pdfplumber
-fpdf
-torch
-transformers==4.36.2
-sentencepiece      # CPU‑only version is fine; GPU auto‑detected
+fpdf      # CPU‑only version is fine; GPU auto‑detected
