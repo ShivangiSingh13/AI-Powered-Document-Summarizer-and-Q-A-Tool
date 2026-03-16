@@ -9,12 +9,8 @@ import os
 
 # Load transformers pipelines
 @st.cache_resource
-def load_models():
-    summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6", device=-1)
-    qa_pipeline = pipeline("question-answering", model="distilbert-base-uncased-distilled-squad", device=-1)
-    return summarizer, qa_pipeline
-
-summarizer, qa_pipeline = load_models()
+summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+qa_pipeline = pipeline("question-answering", model="distilbert-base-uncased-distilled-squad")
 
 # Session states
 if "file_history" not in st.session_state:
@@ -81,7 +77,7 @@ if uploaded_files:
                     chunks = split_text(text)
                     summary_chunks = []
                     for chunk in chunks:
-                        result = summarizer(chunk[:1000], max_length=150, min_length=40, do_sample=False)
+                        result = summarizer(chunk, max_length=150, min_length=40, do_sample=False)
                         summary_chunks.append(result[0]['summary_text'])
                     full_summary = "\n\n".join(summary_chunks)
                     st.success("✅ Summary:")
